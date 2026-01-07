@@ -1,7 +1,4 @@
 # aws_files
-Great question — this is exactly the right thing to ask when moving beyond local testing 👍
-Let’s go step by step and keep it practical.
-
 🚨 The core problem in multi-node clusters
 
 You’re using:
