@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aws-deployment
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aws-deployment
+  template:
+    metadata:
+      labels: 
+        app: aws-deployment
+    spec:
+      containers:
+        - name: deplyoment
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name : my-data
+              mountPath: /usr/share/nginx/html
+      volumes:
+        - name: my-data
+          persistentVolumeClaim:
+            claimName: pvc-volume
+       
